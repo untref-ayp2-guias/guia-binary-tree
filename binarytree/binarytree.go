@@ -4,18 +4,25 @@ type BinaryTree[T any] struct {
 	root *BinaryNode[T]
 }
 
-func NewBinaryTree[T any](data T, left *BinaryTree[T], right *BinaryTree[T]) *BinaryTree[T] {
-	var node *BinaryNode[T]
-	if left == nil && right == nil {
-		node = NewBinaryNode(data, nil, nil)
-	} else if right == nil {
-		node = NewBinaryNode(data, left.root, nil)
-	} else if left == nil {
-		node = NewBinaryNode(data, nil, right.root)
-	} else {
-		node = NewBinaryNode(data, left.root, right.root)
-	}
+func NewBinaryTree[T any](data T) *BinaryTree[T] {
+	node := NewBinaryNode(data, nil, nil)
 	return &BinaryTree[T]{root: node}
+
+}
+
+func (t *BinaryTree[T]) InsertLeft(bt *BinaryTree[T]) {
+	if t.root == nil {
+		t.root = bt.root
+	} else {
+		t.root.left = bt.root
+	}
+}
+func (t *BinaryTree[T]) InsertRight(bt *BinaryTree[T]) {
+	if t.root == nil {
+		t.root = bt.root
+	} else {
+		t.root.right = bt.root
+	}
 }
 
 func (t *BinaryTree[T]) PrintPreOrder() {

@@ -2,20 +2,28 @@ package main
 
 import (
 	"fmt"
+
 	"guia12/binarytree"
 )
 
 func main() {
-	node1 := binarytree.NewBinaryTree("B", nil, nil)
-	node2 := binarytree.NewBinaryTree("C", nil, nil)
-	node3 := binarytree.NewBinaryTree("-", node1, node2)
-	node4 := binarytree.NewBinaryTree("D", nil, nil)
-	node5 := binarytree.NewBinaryTree("*", node3, node4)
-	arbol := binarytree.NewBinaryTree("+", nil, node5)
-	fmt.Println("-----------PrintPreOrder-----------")
-	arbol.PrintPreOrder()
+
+	btree1 := binarytree.NewBinaryTree("+")
+	btree1.InsertLeft(binarytree.NewBinaryTree("A"))
+	btree1.InsertRight(binarytree.NewBinaryTree("B"))
+
+	btree2 := binarytree.NewBinaryTree("*")
+	btree2.InsertLeft(binarytree.NewBinaryTree("C"))
+	btree2.InsertRight(binarytree.NewBinaryTree("D"))
+
+	btree3 := binarytree.NewBinaryTree("-")
+	btree3.InsertLeft(btree1)
+	btree3.InsertRight(btree2)
+
+	fmt.Println("-----------PrintInOrder-----------")
+	btree3.PrintInOrder()
+	fmt.Println("-----------PrintPreOrder----------")
+	btree3.PrintPreOrder()
 	fmt.Println("-----------PrintPostOrder----------")
-	arbol.PrintPostOrder()
-	fmt.Println("-----------PrintInOrder------------")
-	arbol.PrintInOrder()
+	btree3.PrintPostOrder()
 }
