@@ -1,23 +1,23 @@
 package ejercicios
 
-type BinaryTree[data int] struct {
-	root *BinaryNode[int]
+type BinaryTree struct {
+	root *BinaryNode
 }
 
-func NewBinaryTree(data int) *BinaryTree[int] {
+func NewBinaryTree(data int) *BinaryTree {
 	node := NewBinaryNode(data, nil, nil)
-	return &BinaryTree[int]{root: node}
+	return &BinaryTree{root: node}
 
 }
 
-func (t *BinaryTree[int]) InsertLeft(bt *BinaryTree[int]) {
+func (t *BinaryTree) InsertLeft(bt *BinaryTree) {
 	if t.root == nil {
 		t.root = bt.root
 	} else {
 		t.root.left = bt.root
 	}
 }
-func (t *BinaryTree[int]) InsertRight(bt *BinaryTree[int]) {
+func (t *BinaryTree) InsertRight(bt *BinaryTree) {
 	if t.root == nil {
 		t.root = bt.root
 	} else {
@@ -25,43 +25,43 @@ func (t *BinaryTree[int]) InsertRight(bt *BinaryTree[int]) {
 	}
 }
 
-func (t *BinaryTree[int]) PrintPreOrder() {
+func (t *BinaryTree) PrintPreOrder() {
 	if t.root != nil {
 		t.root.PrintPreOrder()
 	}
 }
 
-func (t *BinaryTree[int]) PrintInOrder() {
+func (t *BinaryTree) PrintInOrder() {
 	if t.root != nil {
 		t.root.PrintInOrder()
 	}
 }
 
-func (t *BinaryTree[int]) PrintPostOrder() {
+func (t *BinaryTree) PrintPostOrder() {
 	if t.root != nil {
 		t.root.PrintPostOrder()
 	}
 }
 
-func (t *BinaryTree[int]) Empty() {
+func (t *BinaryTree) Empty() {
 	t.root = nil
 }
 
-func (t *BinaryTree[int]) IsEmpty() bool {
+func (t *BinaryTree) IsEmpty() bool {
 	return t.root == nil
 }
 
-func (t *BinaryTree[int]) Size() int {
+func (t *BinaryTree) Size() int {
 	if t.root != nil {
-		return int(t.root.Size())
+		return t.root.Size()
 	} else {
 		return -1
 	}
 }
 
-func (t *BinaryTree[int]) Height() int {
+func (t *BinaryTree) Height() int {
 	if t.root != nil {
-		return int(t.root.Height())
+		return t.root.Height()
 	} else {
 		return 0
 	}

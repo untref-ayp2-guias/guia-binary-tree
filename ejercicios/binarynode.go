@@ -5,17 +5,17 @@ import (
 	"math"
 )
 
-type BinaryNode[data int] struct {
-	left  *BinaryNode[int]
-	right *BinaryNode[int]
+type BinaryNode struct {
+	left  *BinaryNode
+	right *BinaryNode
 	data  int
 }
 
-func NewBinaryNode(data int, left *BinaryNode[int], right *BinaryNode[int]) *BinaryNode[int] {
-	return &BinaryNode[int]{left: left, right: right, data: data}
+func NewBinaryNode(data int, left *BinaryNode, right *BinaryNode) *BinaryNode {
+	return &BinaryNode{left: left, right: right, data: data}
 }
 
-func (n *BinaryNode[int]) PrintPreOrder() {
+func (n *BinaryNode) PrintPreOrder() {
 	fmt.Println(n.data)
 	if n.left != nil {
 		n.left.PrintPreOrder()
@@ -25,7 +25,7 @@ func (n *BinaryNode[int]) PrintPreOrder() {
 	}
 }
 
-func (n *BinaryNode[int]) PrintInOrder() {
+func (n *BinaryNode) PrintInOrder() {
 	if n.left != nil {
 		n.left.PrintInOrder()
 	}
@@ -35,7 +35,7 @@ func (n *BinaryNode[int]) PrintInOrder() {
 	}
 }
 
-func (n *BinaryNode[int]) PrintPostOrder() {
+func (n *BinaryNode) PrintPostOrder() {
 	if n.left != nil {
 		n.left.PrintPostOrder()
 	}
@@ -45,7 +45,7 @@ func (n *BinaryNode[int]) PrintPostOrder() {
 	fmt.Println(n.data)
 }
 
-func (n *BinaryNode[int]) Size() int {
+func (n *BinaryNode) Size() int {
 	size := 1
 	if n.left != nil {
 		size += n.left.Size()
@@ -53,10 +53,10 @@ func (n *BinaryNode[int]) Size() int {
 	if n.right != nil {
 		size += n.right.Size()
 	}
-	return int(size)
+	return size
 }
 
-func (n *BinaryNode[int]) Height() int {
+func (n *BinaryNode) Height() int {
 	leftHeight := -1
 	rightHeight := -1
 	if n.left != nil {
