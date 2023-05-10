@@ -50,7 +50,7 @@ Escribir un método recursivo que calcule (y devuelva) la cantidad de nodos cuyo
 Por ejemplo: 7 + 6 + 9 + 11 =  33
 
 ### Ejercicio 6
-Escribir un método recursivo que calcule (y devuelva) la mayor altura entre el sub-árbol izquierdo y derecho de un árbol binario de enteros. El método debe devolver 0 si el árbol está vacío
+Escribir un método recursivo que calcule (y devuelva) la mayor altura entre el sub-árbol izquierdo y derecho de un árbol binario de enteros. El método debe devolver -1 si el árbol está vacío
 
 ![](imagenes/ejer6.jpg)
 
