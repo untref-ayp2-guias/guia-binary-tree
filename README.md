@@ -70,3 +70,9 @@ Escribir un método recursivo para un árbol binario de enteros, que calcule (y 
 ![](imagenes/ejer8.jpg)
 
 Por ejemplo: 29 + 15 + 11 = 55
+
+### Ejercicio 9
+
+Agregar a la clase árbol binario dada en clase un método que permita recorrer el árbol por niveles. Pista usar una cola para registrar los hijos de un nodo que se está procesando y que se visitarán luego de terminar de visitar todos los nodos del nivel actual. Por ejemplo dado el árbol de la figura el recorrido por niveles debería mostrar en pantalla: A, B, C, D, E, F, G,H, I, J, K, L.
+
+![](imagenes/ejer9.png)
