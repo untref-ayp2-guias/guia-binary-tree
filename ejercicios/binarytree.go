@@ -55,7 +55,7 @@ func (t *BinaryTree) Size() int {
 	if t.root != nil {
 		return t.root.Size()
 	} else {
-		return -1
+		return 0
 	}
 }
 
@@ -63,6 +63,6 @@ func (t *BinaryTree) Height() int {
 	if t.root != nil {
 		return t.root.Height()
 	} else {
-		return 0
+		return -1
 	}
 }
