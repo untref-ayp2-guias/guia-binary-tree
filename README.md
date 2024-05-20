@@ -76,3 +76,26 @@ Por ejemplo: 29 + 15 + 11 = 55
 Agregar a la clase árbol binario dada en clase un método que permita recorrer el árbol por niveles. Pista usar una cola para registrar los hijos de un nodo que se está procesando y que se visitarán luego de terminar de visitar todos los nodos del nivel actual. Por ejemplo dado el árbol de la figura el recorrido por niveles debería mostrar en pantalla: A, B, C, D, E, F, G,H, I, J, K, L.
 
 ![](imagenes/ejer9.png)
+
+### Ejercicio 10: El ladrón de casas (bonus)
+
+> Este ejercicio es a modo de desafío, no es necesario que lo hagas si no quieres. Es una variante del problema de la casa del ladrón de casas que vimos en la clase de programación dinámica.
+
+El ladrón ha encontrado un nuevo lugar para sus robos una vez más. Solo hay una entrada a esta área, llamada raíz.
+
+Salvo por la raíz, cada casa tiene una y solo una casa padre. Después de un recorrido, el inteligente ladrón se dio cuenta de que todas las casas en este lugar forman un árbol binario. Se contactará automáticamente con la policía si se roban dos casas directamente conectadas durante la misma noche.
+
+Dado la raíz del árbol binario, devolver la cantidad máxima de dinero que el ladrón puede robar sin alertar a la policía.
+
+#### Ejemplo 1
+![](imagenes/rob1-tree.jpg)
+
+- **Salida:** 7
+- **Explicación:** La cantidad máxima de dinero que el ladrón puede robar = 3 + 3 + 1 = 7.
+
+#### Ejemplo 2
+
+![](imagenes/rob2-tree.jpg)
+
+- **Salida:** 9
+- **Explicación:** La cantidad máxima de dinero que el ladrón puede robar = 4 + 5 = 9.
