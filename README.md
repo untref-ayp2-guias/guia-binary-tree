@@ -1,19 +1,5 @@
-# Guía 12
-## Implementación de las diapositivas
-
-En la siguiente carpeta se encuentra la implementación del código suministrado en la clase:
-
-- `/binarytree`, código del binarytree como del binarynode
-
-En la siguiente carpeta se encuentran los test del código suministrado en la clase:
-
-- `/tests`
-
+# Guía Binary Tree
 ## Ejercicios
-
-En la carpeta `/ejercicios` encontrarás una implementacion de un binarytree para enteros que deberas usar para resolver los ejercicios
-
-
 ### Ejercicio 1
 Escribir un método recursivo que calcule (y devuelva) la suma de todos los nodos en un árbol binario de enteros. El método debe devolver 0 si el árbol está vacío
 
