@@ -29,11 +29,11 @@ Escribir un método recursivo que calcule (y devuelva) la suma de todos los valo
 Por ejemplo: 2 + 2 + 6 + 4 =  14
 
 ### Ejercicio 5
-Escribir un método recursivo que calcule (y devuelva) la cantidad de nodos cuyo valor es mayor o igual que 6 de un árbol binario de enteros. El método debe devolver 0 si el árbol está vacío
+Escribir un método recursivo que calcule (y devuelva) la cantidad de nodos cuyo valor es mayor que un k dado, de un árbol binario de enteros. El método debe devolver 0 si el árbol está vacío
 
 ![](imagenes/tree.png)
 
-Por ejemplo: 7 + 6 + 9 + 11 =  33
+Por ejemplo: Mayores que 8, daría 18
 
 ### Ejercicio 6
 Escribir un método recursivo que calcule (y devuelva) la mayor altura entre el sub-árbol izquierdo y derecho de un árbol binario de enteros. El método debe devolver -1 si el árbol está vacío
@@ -43,7 +43,7 @@ Escribir un método recursivo que calcule (y devuelva) la mayor altura entre el 
 Por ejemplo: debe devolver 3
 
 ### Ejercicio 7
-Escribir un método recursivo que calcule (y devuelva),la suma de todas las hojas de un árbol binario de enteros que son hijas izquierdas de un nodo. El método debe devolver 0 si el árbol está vacío
+Escribir un método recursivo que calcule (y devuelva) la suma de todas las hojas de un árbol binario de enteros que son hijas izquierdas de un nodo. El método debe devolver 0 si el árbol está vacío
 
 ![](imagenes/ejer7.jpg)
 

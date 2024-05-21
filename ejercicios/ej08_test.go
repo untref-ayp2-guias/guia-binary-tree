@@ -15,7 +15,7 @@ import (
 //        / \
 //       8   7
 
-func TestSumaDerechosPares(t *testing.T) {
+func TestSumaDerechosImpares(t *testing.T) {
 	t1 := binarytree.NewBinaryTree(1)
 	t3 := binarytree.NewBinaryTree(3)
 	t2 := binarytree.NewBinaryTree(2)
