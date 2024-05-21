@@ -1,0 +1,120 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Ejercicio 01
+      id: ejercicio-01
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 01
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaNodos$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 09
+      id: ejercicio-09
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 09
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestRecorrerPorNivel$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio01
+      id: ejercicio01
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio01
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaNodos$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 02
+      id: ejercicio-02
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 02
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaHojas$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 03
+      id: ejercicio-03
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 03
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaInternos$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 04
+      id: ejercicio-04
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 04
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaPares$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 05
+      id: ejercicio-05
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 05
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestSumaMayoresQue$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 06
+      id: ejercicio-06
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 06
+        setup-command: ''
+        command: go test ./ejercicios/... -run ^TestMayorAltura$
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 07
+      id: ejercicio-07
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 07
+        setup-command: ''
+        command: "$ go test ./ejercicios/... -run ^TestSumaHojasIzquierdas$"
+        timeout: 10
+        max-score: 1
+    - name: Ejercicio 08
+      id: ejercicio-08
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Ejercicio 08
+        setup-command: ''
+        command: "$ go test ./ejercicios/... -run ^TestSumaDerechosPares$"
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EJERCICIO-01_RESULTS: "${{steps.ejercicio-01.outputs.result}}"
+        EJERCICIO-09_RESULTS: "${{steps.ejercicio-09.outputs.result}}"
+        EJERCICIO01_RESULTS: "${{steps.ejercicio01.outputs.result}}"
+        EJERCICIO-02_RESULTS: "${{steps.ejercicio-02.outputs.result}}"
+        EJERCICIO-03_RESULTS: "${{steps.ejercicio-03.outputs.result}}"
+        EJERCICIO-04_RESULTS: "${{steps.ejercicio-04.outputs.result}}"
+        EJERCICIO-05_RESULTS: "${{steps.ejercicio-05.outputs.result}}"
+        EJERCICIO-06_RESULTS: "${{steps.ejercicio-06.outputs.result}}"
+        EJERCICIO-07_RESULTS: "${{steps.ejercicio-07.outputs.result}}"
+        EJERCICIO-08_RESULTS: "${{steps.ejercicio-08.outputs.result}}"
+      with:
+        runners: ejercicio-01,ejercicio-09,ejercicio01,ejercicio-02,ejercicio-03,ejercicio-04,ejercicio-05,ejercicio-06,ejercicio-07,ejercicio-08
